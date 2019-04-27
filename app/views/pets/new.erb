@@ -12,17 +12,19 @@
   <label>Choose an existing owner:</label>
 
   <br>
-
-  <%@owners.each do |pet|%>
-    <input type="checkbox" name="owner[pet_ids][]" id="<%=pet.id%>" value="<%=pet.id%>"><%=pet.name%></input>
-  <%end%>
+  <div class="">
+    <%@owners.each do |owner|%>
+      <input type="radio" name="owners" id="<%=owner.id%>" value="<%=owner.id%>"><%=owner.name%></input>
+    <%end%>
+  </div>
+  
 
   <br>
 
-    <label>and/or, create a new pet:</label>
+    <label>and/or, create a new owner:</label>
     <br>
     <label>name:</label>
-      <input  type="text" name="pet[name]"></input>
+      <input  type="text" name="owner[name]"></input>
     <br>
   <input type="submit" value="Create Owner">
 </form>
